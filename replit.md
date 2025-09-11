@@ -27,8 +27,10 @@ This is a Flask web application for "JFAC Farmers - A group of farmers with a pu
 ## Technical Configuration
 - **Host**: 0.0.0.0 (required for Replit proxy)
 - **Port**: 5000 (Replit standard)
-- **Debug Mode**: Enabled for development
-- **Workflow**: "Flask App" configured and running
+- **Debug Mode**: Controlled by FLASK_DEBUG environment variable (secure parsing)
+- **Development**: Flask dev server via `python main.py`
+- **Production**: Gunicorn WSGI server via deployment config
+- **Workflow**: "Flask App" configured and running for development
 
 ## Current State
 The application is fully functional and running successfully. All routes are working, the UI is responsive, and the application is ready for use and deployment.
