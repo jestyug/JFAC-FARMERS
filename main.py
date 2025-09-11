@@ -7,6 +7,9 @@ app = Flask(__name__)
 app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = int(os.environ.get('PORT', 5000))
 
+# Security: Only enable debug mode in development
+DEBUG_MODE = os.getenv('FLASK_DEBUG', '0').strip().lower() in {'1', 'true', 'yes', 'on'}
+
 @app.route('/')
 def home():
     """Main landing page for JFAC Farmers"""
@@ -28,4 +31,5 @@ def about():
 
 if __name__ == '__main__':
     # Bind to 0.0.0.0 to allow access from Replit proxy
-    app.run(host='0.0.0.0', port=app.config['PORT'], debug=True)
+    # Only enable debug in development environment
+    app.run(host='0.0.0.0', port=app.config['PORT'], debug=DEBUG_MODE)
