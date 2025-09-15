@@ -8,12 +8,15 @@ app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = int(os.environ.get('PORT', 5000))
 
 # Security: Only enable debug mode in development
-DEBUG_MODE = os.getenv('FLASK_DEBUG', '0').strip().lower() in {'1', 'true', 'yes', 'on'}
+DEBUG_MODE = os.getenv('FLASK_DEBUG',
+                       '0').strip().lower() in {'1', 'true', 'yes', 'on'}
+
 
 @app.route('/')
 def home():
     """Main landing page for JFAC Farmers"""
-    return render_template('index.html')
+    return render_template('activities.html')
+
 
 @app.route('/api/status')
 def api_status():
@@ -24,10 +27,12 @@ def api_status():
         'version': '1.0.0'
     })
 
+
 @app.route('/about')
 def about():
     """About page for the farmers group"""
     return render_template('about.html')
+
 
 if __name__ == '__main__':
     # Bind to 0.0.0.0 to allow access from Replit proxy
