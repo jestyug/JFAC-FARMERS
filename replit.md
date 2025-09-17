@@ -3,7 +3,12 @@
 ## Overview
 This is a Flask web application for "JFAC Farmers - A group of farmers with a purpose". The project was originally an empty GitHub repository and has been set up as a functional web application in the Replit environment.
 
-## Recent Changes (September 11, 2025)
+## Recent Changes 
+**September 17, 2025**
+- Enabled debug mode by default in development for better debugging experience
+- Verified application is running correctly with successful request handling
+
+**September 11, 2025**
 - Created complete Flask web application from empty repository
 - Set up project structure with templates, static files, and main application
 - Configured Flask to run on port 5000 with host 0.0.0.0 for Replit proxy compatibility

@@ -8,8 +8,9 @@ app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = int(os.environ.get('PORT', 5000))
 
 # Security: Only enable debug mode in development
-DEBUG_MODE = os.getenv('FLASK_DEBUG',
-                       '0').strip().lower() in {'1', 'true', 'yes', 'on'}
+# Default to True in development, can be overridden with FLASK_DEBUG=0
+DEBUG_MODE = os.getenv('FLASK_DEBUG', 
+                       '1').strip().lower() in {'1', 'true', 'yes', 'on'}
 
 
 @app.route('/')
