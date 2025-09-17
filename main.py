@@ -15,7 +15,7 @@ DEBUG_MODE = os.getenv('FLASK_DEBUG',
 @app.route('/')
 def home():
     """Main landing page for JFAC Farmers"""
-    return render_template('activities.html')
+    return render_template('index.html')
 
 
 @app.route('/api/status')
