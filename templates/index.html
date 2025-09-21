@@ -2,26 +2,43 @@
 
 {% block content %}
 <div class="hero">
-    <h1>Welcome to JFAC Farmers</h1>
-    <img src="https://replit.com/@eminenceuganda/JFAC-FARMERS#static/jfac_vegatables.jpg" width="120" height="90" alt="HTML Dog">
-    <p class="subtitle">A group of farmers with a purpose</p>
+    <h1 class="h1">Welcome to JFAC Farmers</h1>
+    <!-- <h1>  {{company_name}}</h1>-->
+      <p class="subtitle">A group of farmers with a purpose</p>
     <div class="hero-content">
-        <h2>Our Mission</h2>
+        <h2 class = "h2">Our Mission</h2>
         <p>We are dedicated to sustainable farming practices, community support, and agricultural innovation.</p>
         
         <div class="features">
             <div class="feature">
-                <h3>🌱 Sustainable Agriculture</h3>
+                <h3 class="p">🌱 Sustainable Agriculture</h3>
                 <p>Promoting environmentally friendly farming methods</p>
             </div>
             <div class="feature">
                 <h3>🤝 Community Support</h3>
-                <p>Supporting local farmers and communities</p>
+                <p class="p">Supporting local farmers and communities</p>
+                <p>
+                    {{farmersdata}}
+                </p>
             </div>
             <div class="feature">
                 <h3>💡 Innovation</h3>
                 <p>Embracing new technologies and farming techniques</p>
             </div>
+
+            <div class="feature">
+                <h3>💡 Administrator's Corner </h3>
+                
+
+                
+                <p>This section is for Manager Only</p> <br><br>
+                <!--
+                <button class="btn btn-success" type="button" onclick="alert('Please contact the administrator for login details if you dont have them.')">System Login!
+                </button>
+                -->
+                <a href="https://replit.com/@eminenceuganda/JFAC-FARMERS#templates/login.html" class="btn btn-success"> Go to Login Page</a>
+            </div>
+             
         </div>
     </div>
 </div>

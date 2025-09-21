@@ -2,7 +2,20 @@ from flask import Flask, render_template, jsonify
 import os
 
 app = Flask(__name__)
-
+# creating a dynamic paper for gathering farming activities.
+farmersdata = [{
+    'farmersgroupname': 'twekwwembe',
+    'crop': 'Greens',
+    'quantity': 100,
+    'location': 'Wakiso',
+    'date': '2023-10-01'
+}, {
+    'farmersgroupname': 'John Doe',
+    'crop': 'Wheat',
+    'quantity': 100,
+    'location': 'Field 1',
+    'date': '2023-10-01'
+}]
 # Configure Flask app to run on all hosts (required for Replit proxy)
 app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = int(os.environ.get('PORT', 5000))
@@ -15,7 +28,9 @@ DEBUG_MODE = os.getenv('FLASK_DEBUG',
 @app.route('/')
 def home():
     """Main landing page for JFAC Farmers"""
-    return render_template('index.html')
+    return render_template('index.html',
+                           farmersdata=farmersdata,
+                           company_name='Jfac_farmers')
 
 
 @app.route('/api/status')
