@@ -17,9 +17,7 @@
             <div class="feature">
                 <h3>🤝 Community Support</h3>
                 <p class="p">Supporting local farmers and communities</p>
-                <p>
-                    {{farmersdata}}
-                </p>
+                
             </div>
             <div class="feature">
                 <h3>💡 Innovation</h3>
@@ -36,10 +34,31 @@
                 <button class="btn btn-success" type="button" onclick="alert('Please contact the administrator for login details if you dont have them.')">System Login!
                 </button>
                 -->
-                <a href="https://replit.com/@eminenceuganda/JFAC-FARMERS#templates/login.html" class="btn btn-success"> Go to Login Page</a>
+                <a href="loginss.html" class="btn btn-danger"> Go to Login Page</a>
             </div>
              
         </div>
     </div>
 </div>
+
+<h1 class=h2 style=text-align:center>Gathering Farmers' Data</h2>
+<div class="features">
+     <div class="feature">
+<div>
+    <div class="row">
+        <div class="col-2"></div>
+        
+         <p class="fw-bold">
+    {% for farmersdata in farmersdata%}
+        {%include 'datafile.html'%}
+    {% endfor %}
+
+    
+</p>
+        </div> 
+    </div> 
+    </div> 
+</div>
+    </div>
+
 {% endblock %}

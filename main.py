@@ -1,20 +1,22 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template, jsonify, redirect
 import os
 
 app = Flask(__name__)
 # creating a dynamic paper for gathering farming activities.
 farmersdata = [{
-    'farmersgroupname': 'twekwwembe',
-    'crop': 'Greens',
-    'quantity': 100,
+    'farmersid': '0782278360',
+    'farmersgroupname': 'ASAU Farmers',
+    'Leadership': 'Senfuka',
+    'Gps': 100-100,
     'location': 'Wakiso',
-    'date': '2023-10-01'
+    'Groupformationdate': '2023-10-01'
 }, {
-    'farmersgroupname': 'John Doe',
-    'crop': 'Wheat',
-    'quantity': 100,
-    'location': 'Field 1',
-    'date': '2023-10-01'
+    'farmersid': '0703165350',
+    'farmersgroupname': 'Zibulatudde',
+    'Leadership': 'Nalongo',
+    'Gps': 100-455,
+    'location': 'Nansana',
+    'Groupformationdate': '2025-10-01'
 }]
 # Configure Flask app to run on all hosts (required for Replit proxy)
 app.config['HOST'] = '0.0.0.0'
@@ -25,12 +27,23 @@ DEBUG_MODE = os.getenv('FLASK_DEBUG',
                        '0').strip().lower() in {'1', 'true', 'yes', 'on'}
 
 
+@app.route('/farmersdata')
+def list_farmersdata():
+    return jsonify(farmersdata)
+
+
+@app.route('/index')
+def index():
+    """Main landing page for JFAC Farmers"""
+    return render_template('index.html',
+                             farmersdata=farmersdata,
+                             company_name='Thank you for submitting your data')
+
+
 @app.route('/')
 def home():
     """Main landing page for JFAC Farmers"""
-    return render_template('index.html',
-                           farmersdata=farmersdata,
-                           company_name='Jfac_farmers')
+    return render_template('loginss.html')
 
 
 @app.route('/api/status')
