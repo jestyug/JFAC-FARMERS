@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify, redirect
+from flask import Flask, render_template, jsonify
 import os
 
 app = Flask(__name__)
@@ -27,11 +27,6 @@ DEBUG_MODE = os.getenv('FLASK_DEBUG',
                        '0').strip().lower() in {'1', 'true', 'yes', 'on'}
 
 
-@app.route('/farmersdata')
-def list_farmersdata():
-    return jsonify(farmersdata)
-
-
 @app.route('/index')
 def index():
     """Main landing page for JFAC Farmers"""
@@ -54,7 +49,10 @@ def api_status():
         'message': 'JFAC Farmers application is operational',
         'version': '1.0.0'
     })
-
+    
+@app.route('/api/farmersdataapi')
+def list_farmersdata():
+    return jsonify(farmersdata)
 
 @app.route('/about')
 def about():
