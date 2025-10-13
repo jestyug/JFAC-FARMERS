@@ -1,4 +1,4 @@
-from flask import Flask, render_template, jsonify
+from flask import Flask, render_template,jsonify
 import os
 
 app = Flask(__name__)
@@ -10,14 +10,25 @@ farmersdata = [{
     'Gps': 100-100,
     'location': 'Wakiso',
     'Groupformationdate': '2023-10-01'
-}, {
+},
+{
     'farmersid': '0703165350',
     'farmersgroupname': 'Zibulatudde',
     'Leadership': 'Nalongo',
     'Gps': 100-455,
     'location': 'Nansana',
     'Groupformationdate': '2025-10-01'
-}]
+},
+      {
+    'farmersid': '0782278350',
+    'farmersgroupname': 'Agaliwamu',
+    'Leadership': 'Kasigwa',
+    'Gps': 100-455,
+    'location': 'Muyenge',
+    'Groupformationdate': '2025-10-01'
+}        
+              
+]
 # Configure Flask app to run on all hosts (required for Replit proxy)
 app.config['HOST'] = '0.0.0.0'
 app.config['PORT'] = int(os.environ.get('PORT', 5000))
@@ -50,7 +61,7 @@ def api_status():
         'version': '1.0.0'
     })
     
-@app.route('/api/farmersdataapi')
+@app.route("/api/farmersdataapi")
 def list_farmersdata():
     return jsonify(farmersdata)
 
@@ -58,6 +69,12 @@ def list_farmersdata():
 def about():
     """About page for the farmers group"""
     return render_template('about.html')
+
+@app.route('/details')
+def gdetails():
+    """About page for the farmers group"""
+    return render_template('groupdetails.html')
+
 
 
 if __name__ == '__main__':

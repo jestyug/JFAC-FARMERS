@@ -1,0 +1,152 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="hero">
+    <h1 class="h1"><b>Individual's details</b></h1>
+    <!-- <h1>  {{company_name}}</h1>
+      <p class="subtitle">A group of farmers with a purpose</p>
+    <div class="hero-content">
+        <h2 class = "h2">Our Mission</h2>
+        <p>We are dedicated to sustainable farming practices, community support, and agricultural innovation.</p>
+        -->
+        <div class="features">
+            <div class="feature">
+                <h3 class="p"> <b>Capture Individual's Details</b></h3>
+                <p>Bio-Data</p>
+                <form>
+                  
+
+                      <label for="Group_Id" class="form-label">Group Id</label>
+                      <input type="text" class="form-control" id="inddet_id" aria-describedby="Group_Id">
+                      <!--<div id="emailHelp" class="form-text">We'll never share your email with anyone else.
+                      </div>-->
+
+                    <div class="mb-3"; text-align: "left">
+                        <label for="Member_Id" class="form-label">Member Id</label>
+                        <input type="text" class="form-control" id="inddet_id" aria-describedby="Member_Id">
+
+                    <div class="mb-3"; text-align: "left">
+                        <label for="name" class="form-label">Full Namae</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name">
+                        
+                    
+                      <label for="Memberdob" class="form-label">Date of Birth</label>
+                      <input type="date" class="form-control" id="inddet_id" aria-describedby="Memberdob">
+                  
+                                
+                  </div>
+                  <div class="mb-3">
+                    <label for="nin" class="form-label">NIN</label>
+                    <input type="text" class="form-control" id="nin">
+                           
+                    
+                   </div>
+
+                    <div class="features"; text-align: "left"; >
+                        <form action="/submit_form" method="post">
+                        <label class="mb-3"; for="item_selection">Category:</label>
+                        <select id="item_selection" name="selected_item"><br>
+                        <option value="item1">House Wife</option>
+                        <option value="item2">Single Mother</option>
+                        <option value="item3">Teenager</option>
+                       </select>
+                    <br><br>
+                       <!-- <input type="submit" value="Submit"> 
+                        </form>
+                            -->
+                    </div>
+
+                    
+                      <div class="mb-3">
+                          <label for="Cat" class="form-label">Category</label>
+                          <input type="text" class="form-control" id="cat">
+                        </div>
+                    
+                  <div class="mb-3 form-check">
+                    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                    <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                  
+                <a href="mails.html" class="btn btn-danger">Email Us</a>
+                </form>
+                    </div>
+                        <div class="features">
+                        <div class="feature">
+                        {% include 'mails.html'%}
+                        </div>
+                        </div>        
+                
+            </div>
+            
+
+        
+
+
+
+
+            
+            <!--
+            <div class="feature">
+                <h3>🤝 Community Support</h3>
+                <p class="p">Supporting local farmers and communities</p>
+                
+            </div>
+
+            <div class="feature">
+                <h3>🤝 Community Support</h3>
+                <p class="p">Supporting local farmers and communities</p>
+
+            </div>
+
+            <div class="feature">
+                <h3>🤝 Community Support</h3>
+                <p class="p">Supporting local farmers and communities</p>
+
+            </div>
+
+            
+            <div class="feature">
+                <h3>💡 Innovation</h3>
+                <p>Embracing new technologies and farming techniques</p>
+            </div>
+
+            <div class="feature">
+                <h3>💡 Administrator's Corner </h3>
+                
+
+                
+                <p>This section is for Manager Only</p> <br><br>
+                <!--
+                <button class="btn btn-success" type="button" onclick="alert('Please contact the administrator for login details if you dont have them.')">System Login!
+                </button>
+               
+                <a href="loginss.html" class="btn btn-danger"> Login off</a>
+            </div>
+             
+        </div>
+    </div>
+</div>
+             
+<h1 class=h2 style=text-align:center><b>Gathering Farmers' Data</b></h2>
+<div class="features">
+     <div class="feature">
+<div>
+    <div class="row">
+        <div class="col-2"></div>
+        
+         <p class="fw-bold">
+    {% for farmersdata in farmersdata%}
+        {%include 'datafile.html'%}
+    {% endfor %}
+
+    
+</p>
+        </div> 
+    </div> 
+    </div> 
+</div>
+    </div>
+
+{% endblock %}
+    -->
